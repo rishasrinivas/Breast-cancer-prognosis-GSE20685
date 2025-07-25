@@ -1,0 +1,8 @@
+# requirements.txt
+GEOparse
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+jupyter

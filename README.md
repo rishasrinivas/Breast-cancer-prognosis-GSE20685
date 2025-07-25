@@ -9,30 +9,33 @@ This project aims to predict breast cancer patient prognosis (specifically, over
 *   **Key Finding:** A Logistic Regression model achieved excellent performance (AUC ~0.95) using the top 1000 most variable genes.
 
 ## Repository Structure
-├── README.md # This file
-├── requirements.txt # Python dependencies
-├── src/
-│ ├── data_download.py # (Optional if data is manually placed) Script to download GSE20685
-│ ├── dataset_overview.py # Script to load data and print initial overview
-│ ├── merging.py # Script to merge expression and clinical data
-│ ├── exploratory_data_analysis.py # Script for EDA (missing values, variance)
-│ ├── feature_selection.py # Script for variance filtering and selecting top K genes
-│ ├── train_dataset.py # Script to split data and train models
-│ ├── model_evaluation.py # Script to evaluate models and generate plots
-│ └── saving_best_model.py # Script to save the best performing model and final data
-├── results/
-│ ├── processed_expression_data_GSE20685.csv # Final processed expression data
-│ ├── clinical_labels_death_GSE20685.csv # Final clinical labels
-│ └── best_model.pkl # Saved best model object (Logistic Regression)
-└── reports/
-  └── figures/ # Generated visualizations (PNG files)
-    ├── missing_values_per_gene.png # EDA: Missing values distribution
-    ├── gene_expression_variances.png # EDA: Gene variance distribution
-    ├── model_performance_comparison.png # CV AUC comparison
-    ├── roc_curves_comparison.png # ROC curves for test set
-    ├── confusion_matrix_logreg.png # Confusion matrix for best model
-    └── feature_importance_rf.png # Feature importance from Random Forest
-  └── 6F.pdf #report
+
+```
+├── README.md                       # Project overview and instructions
+├── requirements.txt                # Python dependencies
+├── src/                            # Source code for all processing and modeling steps
+│   ├── data_download.py            # Script to download GSE20685 (optional if data is manually placed)
+│   ├── dataset_overview.py         # Script to load data and print initial overview
+│   ├── merging.py                  # Script to merge expression and clinical data
+│   ├── exploratory_data_analysis.py# Script for EDA (missing values, variance)
+│   ├── feature_selection.py        # Script for variance filtering and selecting top K genes
+│   ├── train_dataset.py            # Script to split data and train models
+│   ├── model_evaluation.py         # Script to evaluate models and generate plots
+│   └── saving_best_model.py        # Script to save the best performing model and final data
+├── results/                        # Outputs from data processing and modeling
+│   ├── processed_expression_data_GSE20685.csv    # Final processed expression data
+│   ├── clinical_labels_death_GSE20685.csv        # Final clinical labels
+│   └── best_model.pkl              # Saved best model object (Logistic Regression)
+└── reports/                        # Generated reports and visualizations
+    └── figures/                    # Visualizations (PNG files)
+        ├── missing_values_per_gene.png           # EDA: Missing values distribution
+        ├── gene_expression_variances.png         # EDA: Gene variance distribution
+        ├── model_performance_comparison.png      # Cross-validation AUC comparison
+        ├── roc_curves_comparison.png             # ROC curves for test set
+        ├── confusion_matrix_logreg.png           # Confusion matrix for best model
+        └── feature_importance_rf.png             # Feature importance from Random Forest
+    └── 6F.pdf                     # Final report
+```
 
 ## Getting Started
 
